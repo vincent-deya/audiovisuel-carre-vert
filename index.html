@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Deya Audiovisuel — Carré Vert</title>
+  <style>
+    /* Lightweight single-page responsiveness (inline) */
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{height:100%;margin:0;padding:0}
+    :root{
+      --max-width:1100px;--gap:1.125rem;--bg:#fff;--muted:#666;--accent:#2b8aef;
+      --radius:8px;--container-padding:1rem;--fluid-font:1rem;
+    }
+    body{
+      font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+      font-size:var(--fluid-font);line-height:1.5;color:#111;background:var(--bg);
+      -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+    }
+    .container{max-width:var(--max-width);margin-left:auto;margin-right:auto;padding:0 var(--container-padding)}
+    img,picture,video,iframe{max-width:100%;height:auto;display:block;border-radius:var(--radius)}
+    .site-header{display:flex;align-items:center;justify-content:space-between;gap:var(--gap);padding:calc(var(--container-padding)*0.75) 0}
+    .brand{font-weight:700;letter-spacing:-0.2px;font-size:1.125rem;color:var(--accent);text-decoration:none}
+    .nav{display:flex;gap:1rem;align-items:center}
+    .nav a{color:inherit;text-decoration:none;padding:0.4rem 0.6rem;border-radius:6px;transition:background .15s}
+    .nav a:hover{background:rgba(0,0,0,0.04)}
+    .nav-toggle{display:none;background:none;border:0;font-size:1.25rem;cursor:pointer}
+    .hero{display:flex;align-items:center;gap:2rem;margin:1.25rem 0;flex-wrap:wrap}
+    .hero .hero-media{flex:1 1 420px;min-width:260px}
+    .hero .hero-content{flex:1 1 320px;min-width:220px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin:1.25rem 0 2rem}
+    .card{background:white;border-radius:var(--radius);padding:0.75rem;box-shadow:0 6px 18px rgba(11,18,29,0.04);overflow:hidden}
+    .site-footer{padding:1.25rem 0;color:var(--muted);font-size:0.95rem;border-top:1px solid rgba(0,0,0,0.04)}
+    .flex{display:flex;gap:0.75rem;align-items:center}
+    .center{text-align:center}
+    .kicker{color:var(--muted);font-size:.9rem}
+    .h1{font-size:1.5rem;margin:0 0 .5rem}
+    .cta{background:var(--accent);color:#fff;padding:.6rem .9rem;border-radius:8px;text-decoration:none;display:inline-block}
+    /* Responsive */
+    @media (max-width:900px){ .grid{grid-template-columns:repeat(2,1fr)} .hero{gap:1rem} }
+    @media (max-width:600px){
+      .site-header{align-items:flex-start;gap:.5rem}
+      .nav{display:none;width:100%;flex-direction:column}
+      .nav.show{display:flex}
+      .nav-toggle{display:inline-flex;align-items:center;gap:.5rem}
+      .hero{flex-direction:column;align-items:stretch}
+      .grid{grid-template-columns:1fr}
+      .brand{font-size:1rem}
+      .container{padding-left:.75rem;padding-right:.75rem}
+    }
+    @media (max-width:360px){:root{--container-padding:.6rem;--fluid-font:.95rem}}
+    /* Small helpers */
+    .meta{color:var(--muted);font-size:.9rem}
+    .card-title{font-weight:600;margin:.5rem 0}
+  </style>
+</head>
+<body>
+  <header class="site-header container" role="banner">
+    <a class="brand" href="#">Deya Audiovisuel</a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Afficher la navigation">☰</button>
+    <nav id="main-nav" class="nav" role="navigation" aria-label="Principale">
+      <a href="#home">Accueil</a>
+      <a href="#services">Services</a>
+      <a href="#works">Réalisations</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="home" class="container" role="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-content">
+        <p class="kicker">Production • Captation • Location</p>
+        <h1 id="hero-title" class="h1">Solutions audiovisuelles — Carré Vert</h1>
+        <p class="meta">Nous concevons, produisons et diffusons vos événements. Vidéo, son, éclairage et régie complète — clé en main.</p>
+        <p style="margin-top:1rem">
+          <a class="cta" href="#contact">Demandez un devis</a>
+        </p>
+      </div>
+
+      <div class="hero-media" aria-hidden="false">
+        <picture>
+          <source srcset="https://via.placeholder.com/900x560.webp" type="image/webp">
+          <img src="https://via.placeholder.com/900x560.png" alt="Capture d'écran d'une production audiovisuelle">
+        </picture>
+      </div>
+    </section>
+
+    <section id="services" aria-labelledby="services-title">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin:0.5rem 0">
+        <h2 id="services-title" style="margin:0">Nos services</h2>
+        <p class="meta" style="margin:0">Solutions sur mesure pour entreprises et événements</p>
+      </div>
+
+      <div class="grid" role="list">
+        <article class="card" role="listitem">
+          <img src="https://via.placeholder.com/600x360.png?text=Captation" alt="Captation vidéo">
+          <h3 class="card-title">Captation multi‑caméras</h3>
+          <p class="meta">Diffusion live, enregistrement haute qualité, découpage et montage.</p>
+        </article>
+
+        <article class="card" role="listitem">
+          <img src="https://via.placeholder.com/600x360.png?text=Son" alt="Sonorisation">
+          <h3 class="card-title">Sonorisation & ingénierie</h3>
+          <p class="meta">Configuration HF, consoles numériques, retours et monitoring.</p>
+        </article>
+
+        <article class="card" role="listitem">
+          <img src="https://via.placeholder.com/600x360.png?text=Location" alt="Location de matériel">
+          <h3 class="card-title">Location de matériel</h3>
+          <p class="meta">Caméras, lumières, régie, infrastructure réseau.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="works" aria-labelledby="works-title">
+      <h2 id="works-title">Réalisations</h2>
+      <div class="grid">
+        <div class="card">
+          <img src="https://via.placeholder.com/600x360.png?text=Projet+1" alt="Projet 1">
+          <p class="card-title">Événement corporate — Montage & diffusion</p>
+        </div>
+        <div class="card">
+          <img src="https://via.placeholder.com/600x360.png?text=Projet+2" alt="Projet 2">
+          <p class="card-title">Gala de remise de prix — Captation multi‑caméras</p>
+        </div>
+        <div class="card">
+          <img src="https://via.placeholder.com/600x360.png?text=Projet+3" alt="Projet 3">
+          <p class="card-title">Concert live — Sonorisation complète</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact</h2>
+      <div style="display:grid;grid-template-columns:1fr 320px;gap:1rem">
+        <div>
+          <p class="meta">Écrivez-nous pour un devis ou une visite technique.</p>
+          <form style="display:grid;gap:.5rem;">
+            <input type="text" name="name" placeholder="Nom" style="padding:.6rem;border-radius:6px;border:1px solid #ddd">
+            <input type="email" name="email" placeholder="Email" style="padding:.6rem;border-radius:6px;border:1px solid #ddd">
+            <textarea name="message" rows="4" placeholder="Votre message" style="padding:.6rem;border-radius:6px;border:1px solid #ddd"></textarea>
+            <button class="cta" type="submit" style="border:none;cursor:pointer">Envoyer</button>
+          </form>
+        </div>
+        <aside class="card" style="align-self:start">
+          <p class="meta">Adresse</p>
+          <p>Paris / Région</p>
+          <p class="meta" style="margin-top:.6rem">Téléphone</p>
+          <p>+33 1 23 45 67 89</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer container center" role="contentinfo">
+    <p style="margin:.25rem 0">© Deya Audiovisuel — Carré Vert</p>
+    <p style="margin:.25rem 0" class="meta">Conception & production audiovisuelle</p>
+  </footer>
+
+  <script>
+    // Minimal nav toggle
+    (function(){
+      var btn = document.querySelector('.nav-toggle');
+      var nav = document.querySelector('.nav');
+      if(!btn || !nav) return;
+      btn.addEventListener('click', function(){
+        nav.classList.toggle('show');
+        var expanded = nav.classList.contains('show');
+        btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+      });
+    })();
+  </script>
+</body>
+</html>
