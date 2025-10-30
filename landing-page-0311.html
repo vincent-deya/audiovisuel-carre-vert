@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Webinar - Forvis Mazars</title>
+  <style>
+    :root{
+      --max-width:1280px;
+      --player-height:720px;
+      --page-bg: #ffffff;
+      --text-color: #083a86;
+    }
+
+    html,body{
+      height:100%;
+      margin:0;
+      background: var(--page-bg);
+      color: var(--text-color);
+      font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    /* Center everything and constrain width for large screens */
+    .page {
+      min-height:100%;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      padding:24px 16px;
+      box-sizing:border-box;
+    }
+
+    .header {
+      width:100%;
+      max-width: var(--max-width);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      margin-bottom:18px;
+    }
+
+    .header img{
+      display:block;
+      max-width:720px; /* s'ajuste selon l'image */
+      width:100%;
+      height:auto;
+    }
+
+    .player-wrap {
+      width:100%;
+      max-width: var(--max-width);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-direction:column;
+    }
+
+    .player {
+      width:100%;
+      background: #000;
+      border-radius:6px;
+      overflow:hidden;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    }
+
+    .player iframe{
+      display:block;
+      width:100%;
+      height: var(--player-height);
+      border:0;
+    }
+
+    /* Link under the player */
+    .player-link {
+      margin-top:12px;
+      text-align:center;
+      width:100%;
+    }
+
+    .player-link a{
+      color: var(--text-color);
+      text-decoration: none;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 700; /* Arial Bold */
+      border-bottom:2px solid transparent;
+      padding-bottom:2px;
+      font-size: 1rem;
+    }
+
+    .player-link a:hover{
+      border-bottom-color: var(--text-color);
+    }
+
+    /* Responsive: reduce height on small screens */
+    @media (max-width:900px){
+      :root{ --player-height:480px; }
+    }
+    @media (max-width:480px){
+      :root{ --player-height:320px; }
+      .header img{ max-width:320px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- Entête : placez "nouveau projet.png" dans le même dossier que ce fichier -->
+    <header class="header" role="banner">
+      <img src="nouveau projet.png" alt="En-tête : Arrêté des comptes / IFRS - Forvis Mazars">
+    </header>
+
+    <!-- Player centré -->
+    <main class="player-wrap" role="main">
+      <div class="player" aria-label="Lecteur Teams">
+        <iframe
+          src="https://teams.microsoft.com/convene/townhall?eventId=6b05e7f1-2672-4ace-8658-f9bb7a50922f@b9e9ed43-edf4-4755-925b-76f18f50dbe7&sessionId=86ea4d7a-46e3-4e0c-9140-b1190adae2fa"
+          allow="autoplay; camera; microphone; fullscreen"
+          scrolling="no"
+          allowfullscreen
+          title="Webinar Forvis Mazars - lecteur Teams">
+        </iframe>
+      </div>
+
+      <!-- Lien sous le player -->
+      <div class="player-link">
+        <a href="https://www.forvismazars.com/" target="_blank" rel="noopener noreferrer" aria-label="Retrouvez Forvis Mazars en ligne">
+          Retrouvez Forvis Mazars en ligne
+        </a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
